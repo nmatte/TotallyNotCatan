@@ -1,0 +1,17 @@
+Board
+  Graph with vertices, edges, and faces
+
+
+Graph has "size" faces.
+  Each face has a resource type, and die value
+  Each face has 6 vertices and 6 edges
+  Vertex
+    Has 1, 2, or 3 faces
+    Has 2 or 3 edges
+  Edge
+    Has 2 vertices, 1 or 2 faces
+
+Board: Graph
+Face: Tile
+Edge: Road
+Vertex: Spot

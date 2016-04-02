@@ -1,0 +1,18 @@
+Resource Distribution:
+  Dice-roll, tell vertices to receive a resource
+
+Roads
+  Has neighbors
+  Nearest city
+  Longest Path
+  Can I build here?
+
+Town/Cities
+  2 roads away?
+  Listen to resources
+
+Robber
+  Disable resources
+
+Ports
+  Special tile?
