@@ -14,19 +14,24 @@ class Vertex
     return nil if !other_vertex
     raise "already connected" if is_connected?(other_vertex)
 
-    @connections << other_vertex
     edge = Edge.new(self, other_vertex)
+    # Store connection info in this vertex
     @edges << edge
-    other_vertex.second_connect(self, edge)
+    @connections << other_vertex
+    # Store connection info in other vertex
+    other_vertex.store_connection_info(self, edge)
     edge
   end
 
+  # Returns if another vertex is "connected" to this one
   def is_connected?(other_vertex)
     @connections.include?(other_vertex)
   end
 
-  def second_connect(other_vertex, edge)
+  # Used to store connection info in the second vertex
+  #  involved in a connection
+  def store_connection_info(vertex, edge)
     @edges << edge
-    @connections << other_vertex
+    @connections << vertex
   end
 end
