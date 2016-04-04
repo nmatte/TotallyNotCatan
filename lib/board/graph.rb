@@ -1,3 +1,6 @@
+require_relative 'vertex.rb'
+
+
 class Graph
   attr_reader :vertices, :edges
 
@@ -30,6 +33,7 @@ class Graph
 
   # Make an edge between two vertices
   def make_connection(v1, v2)
+    raise "already connected" if is_connected?(v1, v2)
     edge = v1.connect(v2)
     @edges << edge
     edge
@@ -57,54 +61,6 @@ class Graph
   end
 
   def is_connected?(v1, v2)
-    v1.connections[v2.id] == v2
-  end
-end
-
-def make_sample
-  gr = Graph.new
-  a = gr.add_vertex
-  b = gr.add_vertex
-  c = gr.add_vertex
-  d = gr.add_vertex
-  e = gr.add_vertex
-  f = gr.add_vertex
-  g = gr.add_vertex
-  gr.make_connection(a,b)
-  gr.make_connection(a,c)
-  gr.make_connection(c,d)
-  gr.make_connection(e,f)
-  gr
-end
-
-class Vertex
-  attr_accessor :edges, :connections
-  def initialize
-    # List of edges attached to vertex
-    @edges = []
-    # List of vertices "connected" to this one
-    @connections = []
-  end
-
-  # Make an edge between this vertex and another
-  def connect(other_vertex)
-    return nil if !other_vertex
-    return nil if is_connected?(other_vertex)
-
-    @connections << other_vertex
-    edge = Edge.new(self, other_vertex)
-    @edges << edge
-    edge
-  end
-
-  def is_connected?(other_vertex)
-    @connections.include?(other_vertex)
-  end
-end
-
-class Edge
-  attr_accessor :connection
-  def initialize(v1, v2)
-    @connection = [v1, v2]
+    v1.connections.include?(v2)
   end
 end
