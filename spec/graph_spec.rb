@@ -59,4 +59,14 @@ describe Graph do
     end
   end
 
+  describe "#find_connection" do
+    it "returns the edge connecting two vertices" do
+      @graph.find_connection(@a,@b).should eql @A
+    end
+    it "returns nil if the vertices are unconnected" do
+      @graph.break_connection(@a,@b)
+      @graph.find_connection(@a,@b).should eql nil
+    end
+  end
+
 end
