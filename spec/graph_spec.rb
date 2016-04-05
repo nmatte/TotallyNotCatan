@@ -51,10 +51,10 @@ describe Graph do
   end
 
   describe "#is_connected?" do
-    it "returns positive if vertices are connected" do
+    it "returns true if vertices are connected" do
       expect(@graph.is_connected?(@e, @f)).to eq(true)
     end
-    it "returns negative if vertices are not connected" do
+    it "returns false if vertices are not connected" do
       expect(@graph.is_connected?(@e, @d)).to eq(false)
     end
   end
