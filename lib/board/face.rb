@@ -1,10 +1,5 @@
-require_relative 'vertex'
-require_relative 'edge'
-
-# Questions:
-# TODO:Other than ensuring it's surrounded by consecutive edges, what does a face do?
-#   Attach to another face?
-# Help me make this ensure_cyclic less complicated.
+# require_relative 'vertex.rb'
+# require_relative 'edge.rb'
 
 class Face
   attr_reader :edges, :vertices, :neighboring_faces

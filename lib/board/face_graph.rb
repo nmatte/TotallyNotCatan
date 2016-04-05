@@ -13,6 +13,7 @@ class FaceGraph < Graph
   def add_face(edges_array)
     face = Face.new(edges_array)
     @faces << face
+    face
   end
 
   def make_neighbors(face1, face2)
