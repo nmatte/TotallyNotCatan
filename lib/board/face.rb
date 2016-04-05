@@ -29,8 +29,13 @@ class Face
     @neighbor_id += 1
   end
 
-  def remove_neighbor(neighbor_id)
-    @neighboring_faces[neighbor_id].delete
+  def remove_neighbor(neighbor)
+    id_of_neighbor = -1
+    @neighboring_faces.each do |id, face_info|
+      id_of_neighbor = id if face_info["face"] == neighbor
+    end
+    raise "Not a neighbor" if id_of_neighbor == -1
+    @neighboring_faces[id_of_neighbor].delete
   end
 
   def ensure_cyclic(vertices)

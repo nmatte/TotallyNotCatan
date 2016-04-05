@@ -5,9 +5,9 @@ class Graph
   attr_reader :vertices, :edges
 
   #init_v allows for initial vertices (not generally used)
-  def initialize(init_v = [])
+  def initialize
     #@vertices is ALL vertices on the graph
-    @vertices = init_v
+    @vertices = []
     #@edges is ALL edges on the graph
     @edges = []
   end
