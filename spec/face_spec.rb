@@ -16,6 +16,16 @@ describe Face do
     @E = @e.connect(@a)
     @F = @c.connect(@e)
     @goodface2 = Face.new([@C, @E, @F])
+
+    # Disconnected face
+    @x = Vertex.new
+    @y = Vertex.new
+    @z = Vertex.new
+    @X = @x.connect(@y)
+    @Y = @y.connect(@z)
+    @Z = @x.connect(@z)
+    @disface = Face.new([@X, @Y, @Z])
+
   end
 
   describe "#initialize" do
@@ -37,6 +47,21 @@ describe Face do
       @goodface1.add_neighbor(@goodface2)
       vert_share = @goodface1.neighboring_faces[0]["shared_vertices"]
       expect(array_compare(vert_share, [@a, @c])).to eq(true)
+    end
+    it "#doesn't add a neighbor if no elements are shared" do
+      expect {@goodface1.add_neighbor(@disface)}.to raise_error("No connecting edges or vertices")
+    end
+  end
+
+  describe "#remove_neighbor" do
+    it "#removes a neighbor (only one way)" do
+      @goodface1.add_neighbor(@goodface2)
+      @goodface1.remove_neighbor(@goodface2)
+      expect(@goodface1.neighboring_faces.length).to eq(0)
+    end
+
+    it "#returns error if they aren't neighbors" do
+      expect {@goodface1.remove_neighbor(@disface)}.to raise_error("Not a neighbor")
     end
   end
 

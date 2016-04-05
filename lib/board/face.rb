@@ -25,6 +25,7 @@ class Face
     face_info["face"] = face
     face_info["shared_vertices"] = @vertices.select{|vertex| face.vertices.include?(vertex)}
     face_info["shared_edges"] = @edges.select{|edge| face.edges.include?(edge)}
+    raise "No connecting edges or vertices" if face_info["shared_vertices"].empty? && face_info["shared_edges"].empty?
     @neighboring_faces[@neighbor_id] = face_info
     @neighbor_id += 1
   end
@@ -35,7 +36,7 @@ class Face
       id_of_neighbor = id if face_info["face"] == neighbor
     end
     raise "Not a neighbor" if id_of_neighbor == -1
-    @neighboring_faces[id_of_neighbor].delete
+    @neighboring_faces.delete(id_of_neighbor)
   end
 
   def ensure_cyclic(vertices)

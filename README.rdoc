@@ -7,6 +7,3 @@ The following features will be implemented:
 * A FaceGraph-based hexagonal board.
 
 * Multiplayer using Socket, with Facebook login capabilities.
-
-
-<tt>rake doc:app</tt>.
