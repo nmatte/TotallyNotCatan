@@ -20,15 +20,15 @@ describe Face do
 
   describe "#initialize" do
     it "makes the face with the edges" do
-      array_compare(@goodface1.edges, [@A, @B, @C]).should eql true
+      expect(array_compare(@goodface1.edges, [@A, @B, @C])).to eq(true)
     end
     it "includes the contained vertices" do
-      array_compare(@goodface2.vertices, [@a, @e, @c]).should eql true
-      array_compare(@goodface2.vertices, [@a, @b, @c]).should eql false
+      expect(array_compare(@goodface2.vertices, [@a, @e, @c])).to eq(true)
+      expect(array_compare(@goodface2.vertices, [@a, @b, @c])).to eq(false)
 
     end
     it "returns an error if edges aren't cyclic" do
-      expect {Face.new([@D, @A, @B])}.to raise_error
+      expect {Face.new([@D, @A, @B])}.to raise_error("Not cyclic edges")
     end
   end
 
@@ -36,7 +36,7 @@ describe Face do
     it "#adds a neighbor" do
       @goodface1.add_neighbor(@goodface2)
       vert_share = @goodface1.neighboring_faces[0]["shared_vertices"]
-      array_compare(vert_share, [@a, @c]).should eql true
+      expect(array_compare(vert_share, [@a, @c])).to eq(true)
     end
   end
 
