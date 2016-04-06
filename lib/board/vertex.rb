@@ -34,4 +34,8 @@ class Vertex
     @edges << edge
     @connections << vertex
   end
+
+  def inspect
+    "Vertex, connected to: " + @edges.to_s
+  end
 end

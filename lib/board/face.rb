@@ -53,4 +53,12 @@ class Face
     connected_vertices
   end
 
+  def inspect
+    output = "This face contains the following vertices:"
+    output += @vertices.to_s
+    output = "This face contains the following edges:"
+    output += @edges.to_s
+    output
+  end
+
 end

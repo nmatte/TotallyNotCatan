@@ -1,5 +1,6 @@
-require_relative '../lib/board/graph.rb'
-require_relative '../lib/board/face.rb'
+# require_relative '../lib/board/graph.rb'
+# require_relative '../lib/board/face.rb'
+require_relative '../lib/board/face_graph.rb'
 
 # Returns true if the arrays contain the same elements, false otherwise
 def array_compare(arr1, arr2)
