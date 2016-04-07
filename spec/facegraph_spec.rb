@@ -89,7 +89,4 @@ describe FaceGraph do
       expect(neighbors.include?(face)).to eq(true)
     end
   end
-
-
-
 end
