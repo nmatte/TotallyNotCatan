@@ -1,6 +1,12 @@
-require 'face_graph.rb'
+require_relative 'face_graph.rb'
+
+
+# Should board use FaceGraph, or should
+#   it just contain faces?
+# How do I show the resource of a face?
 
 class Board
+  attr_reader :board
   # Current board limitations (Other than the "capability_check")
     # It'll only make a board with consistently shaped tiles
   def initialize(tile_shape = 6, num_tiles = 19)
@@ -10,6 +16,8 @@ class Board
     @board = FaceGraph.new
     build_board
   end
+
+
 
   private
 
@@ -22,7 +30,7 @@ class Board
   end
 
   def build_first_tile
-    @board.make_original_face(tile_shape)
+    @board.make_original_face(@tile_shape)
   end
 
   def build_second_tile
@@ -40,7 +48,11 @@ class Board
         # @board.vertices.last
     (@tile_shape - 2).times do
       @board.add_attached_face(
-        [@board.vertices.last, center_tile_vertex_id, other_center_tile_vertex_id],
+        [
+          @board.vertices.last,
+          @board.vertices[center_tile_vertex_id],
+          @board.vertices[other_center_tile_vertex_id]
+        ],
         @tile_shape
       )
       center_tile_vertex_id += 1
@@ -71,4 +83,5 @@ class Board
   def capability_check(tile_shape, num_tiles)
     raise "I don't know how to do that" unless tile_shape == 6 && num_tiles == 19
   end
+
 end
