@@ -37,6 +37,9 @@ group :development, :test do
   gem 'byebug'
 
   gem 'rspec'
+
+  gem 'guard'
+  gem 'guard-rspec'
 end
 
 group :development do

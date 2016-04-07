@@ -18,21 +18,15 @@ class FaceGraph < Graph
 
   # Makes a face with num_edges edges, which will be attached to nothing.
   def make_original_face(num_edges)
-    vert_ref = []
-    edge_ref = []
 
     # Make the vertices
-    num_edges.times do
-      vert_ref << Vertex.new
-    end
+    vert_ref = Array.new(num_edges) {Vertex.new}
+    edge_ref = []
 
-# TODO: Refactor, connecting vert_ref[0] to vert_ref[-1]
-    # Connect each vertex to the one after it
-    (num_edges - 1).times do |vert_id|
-      edge_ref << make_connection(vert_ref[vert_id], vert_ref[vert_id + 1])
+    # Connect each vertex to the one before it (including the first one :)
+    (num_edges).times do |vert_id|
+      edge_ref << make_connection(vert_ref[vert_id - 1], vert_ref[vert_id])
     end
-    # Connect the first and last vertex
-    edge_ref << make_connection(vert_ref.first, vert_ref.last)
 
     # Make the face and store it
     face = add_face(edge_ref)
@@ -51,6 +45,7 @@ class FaceGraph < Graph
   #   a vertex with the new face
   def add_attached_face(vertex_array, num_edges)
     # Make the vertices into a line
+    # p vertex_array
     vertex_line = make_vertex_line(vertex_array)
     # This finds the "ends" of the vertex line
     end_vertices = [vertex_line.first, vertex_line.last]
@@ -62,9 +57,7 @@ class FaceGraph < Graph
 
     vert_ref = []
     # Make new vertices
-    vertices_to_make.times do
-      vert_ref << Vertex.new
-    end
+    vert_ref = Array.new(vertices_to_make) {Vertex.new}
 
     edge_ref = []
     # Connect new vertices in a line

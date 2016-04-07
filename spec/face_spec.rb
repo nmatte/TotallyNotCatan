@@ -30,12 +30,10 @@ describe Face do
 
   describe "#initialize" do
     it "makes the face with the edges" do
-      expect(array_compare(@goodface1.edges, [@A, @B, @C])).to eq(true)
+      expect(@goodface1.edges).to match_array([@A, @B, @C])
     end
     it "includes the contained vertices" do
-      expect(array_compare(@goodface2.vertices, [@a, @e, @c])).to eq(true)
-      expect(array_compare(@goodface2.vertices, [@a, @b, @c])).to eq(false)
-
+      expect(@goodface2.vertices).to match_array([@a, @e, @c])
     end
     it "raises error if edges aren't cyclic" do
       expect {Face.new([@D, @A, @B])}.to raise_error("Not cyclic edges")
@@ -46,7 +44,7 @@ describe Face do
     it "adds a neighbor" do
       @goodface1.add_neighbor(@goodface2)
       vert_share = @goodface1.neighboring_faces[0]["shared_vertices"]
-      expect(array_compare(vert_share, [@a, @c])).to eq(true)
+      expect(vert_share).to match_array([@a, @c])
     end
     it "raises error if no elements are shared" do
       expect {@goodface1.add_neighbor(@disface)}.to raise_error("No connecting edges or vertices")

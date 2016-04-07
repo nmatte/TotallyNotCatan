@@ -36,6 +36,6 @@ class Vertex
   end
 
   def inspect
-    "Vertex, connected to: " + @edges.to_s
+    "Vertex"
   end
 end

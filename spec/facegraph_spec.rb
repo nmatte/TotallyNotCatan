@@ -31,22 +31,22 @@ describe FaceGraph do
   end
   describe "#add_face" do
     it "makes a face with the given edges" do
-      expect(array_compare(@goodface1.edges, [@A, @B, @C])).to eq(true)
-      expect(array_compare(@goodface2.edges, [@E, @C, @F])).to eq(true)
+      expect(@goodface1.edges).to match_array([@A, @B, @C])
+      expect(@goodface2.edges).to match_array([@E, @C, @F])
     end
     it "contains the vertices of the edges" do
-      expect(array_compare(@goodface1.vertices, [@a, @b, @c])).to eq(true)
-      expect(array_compare(@goodface2.vertices, [@e, @c, @a])).to eq(true)
+      expect(@goodface1.vertices).to match_array([@a, @b, @c])
+      expect(@goodface2.vertices).to match_array([@e, @c, @a])
     end
   end
   describe "#add_face" do
     it "makes a face with the given edges" do
-      expect(array_compare(@goodface1.edges, [@A, @B, @C])).to eq(true)
-      expect(array_compare(@goodface2.edges, [@E, @C, @F])).to eq(true)
+      expect(@goodface1.edges).to match_array([@A, @B, @C])
+      expect(@goodface2.edges).to match_array([@E, @C, @F])
     end
     it "contains the vertices of the edges" do
-      expect(array_compare(@goodface1.vertices, [@a, @b, @c])).to eq(true)
-      expect(array_compare(@goodface2.vertices, [@e, @c, @a])).to eq(true)
+      expect(@goodface1.vertices).to match_array([@a, @b, @c])
+      expect(@goodface2.vertices).to match_array([@e, @c, @a])
     end
   end
   describe "#make_original_face" do
@@ -62,6 +62,14 @@ describe FaceGraph do
         disconnected = false if vertex.is_connected?(@a)
       end
       expect(disconnected).to eq(true)
+    end
+  end
+  describe "#find_neighbors" do
+    it "returns all neighbors of a face" do
+      expect(@facegraph.find_neighbors([@c])).to match_array([@goodface2, @goodface1])
+    end
+    it "returns an empty array given an empty array" do
+      expect(@facegraph.find_neighbors([])).to eq([])
     end
   end
   describe "#add_attached_face" do
