@@ -6,6 +6,8 @@ var Router = require('react-router').Router;
 var Route = require('react-router').Route;
 var IndexRoute = require('react-router').IndexRoute;
 
+var App = require('./components/app.jsx');
+
 
 // var routes = (
 //   <Route path="/" component={App}>
@@ -15,9 +17,13 @@ var IndexRoute = require('react-router').IndexRoute;
 //   </Route>
 // );
 
+var routes = (
+  <Route path="/" component={App}> </Route>
+);
+
 document.addEventListener("DOMContentLoaded", function () {
   ReactDOM.render(
-    <div>react is working</div>,
+    <Router>{routes}</Router>,
     document.getElementById('root')
   );
 });

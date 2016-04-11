@@ -52,6 +52,8 @@
 	var Route = __webpack_require__(166).Route;
 	var IndexRoute = __webpack_require__(166).IndexRoute;
 
+	var App = __webpack_require__(223);
+
 	// var routes = (
 	//   <Route path="/" component={App}>
 	//     <Route path="pokemon/:pokemonId" component={PokemonDetail}>
@@ -60,11 +62,17 @@
 	//   </Route>
 	// );
 
+	var routes = React.createElement(
+	  Route,
+	  { path: '/', component: App },
+	  ' '
+	);
+
 	document.addEventListener("DOMContentLoaded", function () {
 	  ReactDOM.render(React.createElement(
-	    'div',
+	    Router,
 	    null,
-	    'react is working'
+	    routes
 	  ), document.getElementById('root'));
 	});
 
@@ -25152,6 +25160,24 @@
 
 	exports['default'] = _createRouterHistory2['default'](_historyLibCreateHashHistory2['default']);
 	module.exports = exports['default'];
+
+/***/ },
+/* 223 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var React = __webpack_require__(1);
+
+	module.exports = React.createClass({
+	  displayName: 'exports',
+
+	  render: function () {
+	    return React.createElement(
+	      'div',
+	      null,
+	      'I am the start of the app'
+	    );
+	  }
+	});
 
 /***/ }
 /******/ ]);
