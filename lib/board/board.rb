@@ -3,8 +3,6 @@ require_relative 'road.rb'
 require_relative 'spot.rb'
 require_relative 'tile.rb'
 
-# Should board use FaceGraph, or should
-#   it just contain faces?
 # How do I show the resource of a face?
 
 class Board < FaceGraph
