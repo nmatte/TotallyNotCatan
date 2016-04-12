@@ -1,17 +1,75 @@
 .map {
-  background-image: url("http://www.profeasy.com/Settlers_Boardgame/assets/images/komplett_M.jpg");
-  width: 800px;
-  height: 700px;
+  background-image: url("http://www.pleacher.com/mp/mgifs/gifs15/hex.png");
+  width: 820px;
+  height: 755px;
   background-size: cover;
-  text-align: center;
 }
 
 
 #row1 {
-  width: 400px;
+  width: 593px;
   height: 70px;
   border: 1px solid red;
   position: absolute;
-  margin-left: 200px;
-  margin-top: 60px;
+  margin-left: 103px;
+  margin-top: -2px;
+}
+#row2 {
+  width: 744px;
+  height: 70px;
+  border: 1px solid red;
+  position: absolute;
+  margin-left: 20px;
+  margin-top: 136px;
+}
+
+#row3{
+  width: 909px;
+  height: 70px;
+  border: 1px solid red;
+  position: absolute;
+  margin-left: -59px;
+  margin-top: 275px;
+}
+
+#row4{
+  width: 909px;
+  height: 70px;
+  border: 1px solid red;
+  position: absolute;
+  margin-left: -59px;
+  margin-top: 411px;
+}
+
+#row5 {
+  width: 744px;
+  height: 70px;
+  border: 1px solid red;
+  position: absolute;
+  margin-left: 20px;
+  margin-top: 555px;
+}
+
+#row6 {
+  width: 593px;
+  height: 70px;
+  border: 1px solid red;
+  position: absolute;
+  margin-left: 103px;
+  margin-top: 687px;
+}
+
+.vertex{
+  width: 40px;
+  height: 40px;
+  border: 2px solid yellow;
+  border-radius: 50%;
+  display: inline-block;
+  margin-left: 38px;
+  position: relative;
+}
+
+#low {
+  top: 25px;
+  position: relative;
 }

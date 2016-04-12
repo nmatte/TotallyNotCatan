@@ -25158,7 +25158,7 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	var React = __webpack_require__(1);
-	var CatanMap = __webpack_require__(224);
+	var CatanMap = __webpack_require__(225);
 
 	module.exports = React.createClass({
 	  displayName: 'exports',
@@ -25169,7 +25169,70 @@
 	});
 
 /***/ },
-/* 224 */
+/* 224 */,
+/* 225 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var React = __webpack_require__(1);
+	var Row = __webpack_require__(227);
+
+	module.exports = React.createClass({
+	  displayName: 'exports',
+
+	  render: function () {
+	    return React.createElement(
+	      'div',
+	      { className: 'map' },
+	      React.createElement(Row, { verticies: 7, start: 'low', rownum: 'row1' }),
+	      React.createElement(Row, { verticies: 9, start: 'low', rownum: 'row2' }),
+	      React.createElement(Row, { verticies: 11, start: 'low', rownum: 'row3' }),
+	      React.createElement(Row, { verticies: 11, start: 'high', rownum: 'row4' }),
+	      React.createElement(Row, { verticies: 9, start: 'high', rownum: 'row5' }),
+	      React.createElement(Row, { verticies: 7, start: 'high', rownum: 'row6' })
+	    );
+	  }
+	});
+
+/***/ },
+/* 226 */,
+/* 227 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var React = __webpack_require__(1);
+	var Vertex = __webpack_require__(228);
+
+	module.exports = React.createClass({
+	  displayName: 'exports',
+
+	  getInitialState: function () {
+	    return {
+	      height: this.props.start
+	    };
+	  },
+	  generateVertex: function () {
+	    var vertArray = [];
+	    for (var i = 0; i < this.props.verticies; i++) {
+	      vertArray.push(React.createElement(Vertex, { height: this.state.height, key: i }));
+	      if (this.state.height === "low") {
+	        this.state.height = "high";
+	      } else {
+	        this.state.height = "low";
+	      }
+	    }
+	    return vertArray;
+	  },
+	  render: function () {
+	    var verticies = this.generateVertex();
+	    return React.createElement(
+	      'div',
+	      { className: 'row', id: this.props.rownum },
+	      verticies
+	    );
+	  }
+	});
+
+/***/ },
+/* 228 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var React = __webpack_require__(1);
@@ -25178,11 +25241,11 @@
 	  displayName: "exports",
 
 	  render: function () {
-	    return React.createElement(
-	      "div",
-	      { className: "map" },
-	      React.createElement("div", { id: "row1", className: "row" })
-	    );
+	    if (this.props.height === "low") {
+	      return React.createElement("div", { className: "vertex", id: "low" });
+	    } else {
+	      return React.createElement("div", { className: "vertex", id: "high" });
+	    }
 	  }
 	});
 
