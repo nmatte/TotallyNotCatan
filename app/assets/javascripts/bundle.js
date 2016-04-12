@@ -25174,7 +25174,8 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	var React = __webpack_require__(1);
-	var Row = __webpack_require__(227);
+	var VertexRow = __webpack_require__(227);
+	var TileRow = __webpack_require__(229);
 
 	module.exports = React.createClass({
 	  displayName: 'exports',
@@ -25183,12 +25184,17 @@
 	    return React.createElement(
 	      'div',
 	      { className: 'map' },
-	      React.createElement(Row, { verticies: 7, start: 'low', rownum: 'row1' }),
-	      React.createElement(Row, { verticies: 9, start: 'low', rownum: 'row2' }),
-	      React.createElement(Row, { verticies: 11, start: 'low', rownum: 'row3' }),
-	      React.createElement(Row, { verticies: 11, start: 'high', rownum: 'row4' }),
-	      React.createElement(Row, { verticies: 9, start: 'high', rownum: 'row5' }),
-	      React.createElement(Row, { verticies: 7, start: 'high', rownum: 'row6' })
+	      React.createElement(VertexRow, { verticies: 7, start: 'low', rownum: 'row1' }),
+	      React.createElement(VertexRow, { verticies: 9, start: 'low', rownum: 'row2' }),
+	      React.createElement(VertexRow, { verticies: 11, start: 'low', rownum: 'row3' }),
+	      React.createElement(VertexRow, { verticies: 11, start: 'high', rownum: 'row4' }),
+	      React.createElement(VertexRow, { verticies: 9, start: 'high', rownum: 'row5' }),
+	      React.createElement(VertexRow, { verticies: 7, start: 'high', rownum: 'row6' }),
+	      React.createElement(TileRow, { tiles: 3, rownum: 'tilerow1' }),
+	      React.createElement(TileRow, { tiles: 4, rownum: 'tilerow2' }),
+	      React.createElement(TileRow, { tiles: 5, rownum: 'tilerow3' }),
+	      React.createElement(TileRow, { tiles: 4, rownum: 'tilerow4' }),
+	      React.createElement(TileRow, { tiles: 3, rownum: 'tilerow5' })
 	    );
 	  }
 	});
@@ -25210,6 +25216,7 @@
 	    };
 	  },
 	  generateVertex: function () {
+	    // we can have a vertex row store then it'll be easy to keep things in place
 	    var vertArray = [];
 	    for (var i = 0; i < this.props.verticies; i++) {
 	      vertArray.push(React.createElement(Vertex, { height: this.state.height, key: i }));
@@ -25246,6 +25253,48 @@
 	    } else {
 	      return React.createElement("div", { className: "vertex", id: "high" });
 	    }
+	  }
+	});
+
+/***/ },
+/* 229 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var React = __webpack_require__(1);
+	var Tile = __webpack_require__(230);
+
+	module.exports = React.createClass({
+	  displayName: 'exports',
+
+	  generateTiles: function () {
+	    // we can have a tiles per row store which keeps track of where all the tiles are (store it on the backend too)
+	    var tiles = [];
+	    for (var i = 0; i < this.props.tiles; i++) {
+	      tiles.push(React.createElement(Tile, { key: i, tiletype: 'water' }));
+	    }
+	    return tiles;
+	  },
+	  render: function () {
+	    var display = this.generateTiles();
+	    return React.createElement(
+	      'div',
+	      { className: this.props.rownum },
+	      display
+	    );
+	  }
+	});
+
+/***/ },
+/* 230 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var React = __webpack_require__(1);
+
+	module.exports = React.createClass({
+	  displayName: "exports",
+
+	  render: function () {
+	    return React.createElement("div", { className: "tile", id: this.props.tiletype });
 	  }
 	});
 

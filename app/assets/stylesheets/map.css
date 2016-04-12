@@ -3,6 +3,8 @@
   width: 820px;
   height: 755px;
   background-size: cover;
+  position: relative;
+  margin: 0 auto;
 }
 
 
@@ -72,4 +74,67 @@
 #low {
   top: 25px;
   position: relative;
+}
+
+
+/* Tiles CSS*/
+
+.tilerow1 {
+  width: 494px;
+  height: 93px;
+  border: 2px solid green;
+  position: absolute;
+  top: 53px;
+  left: 159px;
+}
+
+.tilerow2 {
+  width: 651px;
+  height: 93px;
+  border: 2px solid green;
+  position: absolute;
+  top: 186px;
+  left: 89px;
+}
+
+.tilerow3{
+  width: 819px;
+  height: 93px;
+  border: 2px solid green;
+  position: absolute;
+  top: 328px;
+  left: 6px;
+}
+
+.tilerow4 {
+  width: 651px;
+  height: 93px;
+  border: 2px solid green;
+  position: absolute;
+  top: 470px;
+  left: 89px;
+}
+
+.tilerow5 {
+  width: 494px;
+  height: 93px;
+  border: 2px solid green;
+  position: absolute;
+  top: 612px;
+  left: 169px;
+}
+
+.tile {
+  height: 92px;
+  width: 95px;
+  border: 1px solid red;
+  display: inline-block;
+  position: relative;
+  left: 32px;
+  margin-right: 65px;
+}
+
+#water {
+  background-image: url("http://3.bp.blogspot.com/-xxwPr1c6dfA/UhzKzAMK_FI/AAAAAAAAA44/lr0kNHWKBp8/s1600/p2shaded.png");
+  background-size: cover;
 }

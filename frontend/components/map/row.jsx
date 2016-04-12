@@ -8,6 +8,7 @@ module.exports = React.createClass({
     });
   },
   generateVertex: function(){
+    // we can have a vertex row store then it'll be easy to keep things in place
     var vertArray = [];
     for(var i = 0; i < this.props.verticies; i++){
       vertArray.push(<Vertex height={this.state.height} key={i}/>);
