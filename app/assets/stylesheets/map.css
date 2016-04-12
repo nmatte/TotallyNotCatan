@@ -1,79 +1,78 @@
 .map {
-  background-image: url("http://www.pleacher.com/mp/mgifs/gifs15/hex.png");
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/9/92/Otterington_railway_station_MMB_31_Starscape.jpg");
   width: 820px;
   height: 755px;
   background-size: cover;
   position: relative;
   margin: 0 auto;
+  z-index: -100
 }
 
 
 #row1 {
   width: 593px;
   height: 70px;
-  border: 1px solid red;
   position: absolute;
-  margin-left: 103px;
+  left: 150px;
   margin-top: -2px;
 }
 #row2 {
   width: 744px;
   height: 70px;
-  border: 1px solid red;
   position: absolute;
-  margin-left: 20px;
-  margin-top: 136px;
+  left: 68px;
+  top: 140px;
 }
 
 #row3{
   width: 909px;
   height: 70px;
-  border: 1px solid red;
   position: absolute;
-  margin-left: -59px;
-  margin-top: 275px;
+  left: -13px;
+  top: 281px;
 }
 
 #row4{
   width: 909px;
   height: 70px;
-  border: 1px solid red;
   position: absolute;
-  margin-left: -59px;
-  margin-top: 411px;
+  top: 420px;
+  left: -17px;
 }
 
 #row5 {
   width: 744px;
   height: 70px;
-  border: 1px solid red;
   position: absolute;
-  margin-left: 20px;
-  margin-top: 555px;
+  left: 66px;
+  top: 561px;
 }
 
 #row6 {
   width: 593px;
   height: 70px;
-  border: 1px solid red;
   position: absolute;
-  margin-left: 103px;
-  margin-top: 687px;
+  left: 149px;
+  top: 702px;
 }
 
 .vertex{
-  width: 40px;
-  height: 40px;
-  border: 2px solid yellow;
+  width: 25px;
+  height: 25px;
+  border: 2px solid white;
   border-radius: 50%;
   display: inline-block;
-  margin-left: 38px;
-  position: relative;
+  margin-right: 53px;
+  background-color: black;
+  z-index: 10;
 }
 
 #low {
-  top: 25px;
+  top: 35px;
   position: relative;
+}
+#high {
+  top: -2px;
 }
 
 
@@ -84,15 +83,15 @@
   height: 93px;
   position: absolute;
   top: 47px;
-  left: 166px;
+  left: 164px;
 }
 
 .tilerow2 {
-  width: 651px;
+  width: 656px;
   height: 93px;
   position: absolute;
-  top: 186px;
-  left: 86px;
+  top: 189px;
+  left: 83px;
 }
 
 .tilerow3{
@@ -100,15 +99,15 @@
   height: 93px;
   position: absolute;
   top: 328px;
-  left: 3px;
+  left: 1px;
 }
 
 .tilerow4 {
-  width: 651px;
+  width: 657px;
   height: 93px;
   position: absolute;
   top: 470px;
-  left: 84px;
+  left: 83px;
 }
 
 .tilerow5 {
@@ -116,17 +115,16 @@
   height: 93px;
   position: absolute;
   top: 612px;
-  left: 166px;
+  left: 164px;
 }
 
 .tile {
-  height: 94px;
+  height: 100px;
   width: 95px;
-  /* border: 1px solid red; */
   display: inline-block;
   position: relative;
   left: 30px;
-  margin-right: 64px;
+  margin-right: 65px;
 }
 
 #water {

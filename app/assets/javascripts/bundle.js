@@ -25211,6 +25211,7 @@
 
 	var React = __webpack_require__(1);
 	var Vertex = __webpack_require__(228);
+	var Road = __webpack_require__(231);
 
 	module.exports = React.createClass({
 	  displayName: 'exports',
@@ -25223,15 +25224,17 @@
 	  generateVertex: function () {
 	    // we can have a vertex row store then it'll be easy to keep things in place
 	    var vertArray = [];
+	    var roadArray = [];
 	    for (var i = 0; i < this.props.verticies; i++) {
 	      vertArray.push(React.createElement(Vertex, { height: this.state.height, key: i }));
+	      roadArray.push(React.createElement(Road, { height: this.state.height }));
 	      if (this.state.height === "low") {
 	        this.state.height = "high";
 	      } else {
 	        this.state.height = "low";
 	      }
 	    }
-	    return vertArray;
+	    return [vertArray, roadArray.slice(0, -1)];
 	  },
 	  render: function () {
 	    var verticies = this.generateVertex();
@@ -25267,6 +25270,7 @@
 
 	var React = __webpack_require__(1);
 	var Tile = __webpack_require__(230);
+	var Road = __webpack_require__(231);
 
 	module.exports = React.createClass({
 	  displayName: 'exports',
@@ -25275,10 +25279,10 @@
 	    // we can have a tiles per row store which keeps track of where all the tiles are (store it on the backend too)
 	    var tiles = [];
 	    for (var i = 0; i < this.props.tiles; i++) {
-	      tiles.push(React.createElement('div', { className: 'road' }));
+	      tiles.push(React.createElement(Road, null));
 	      tiles.push(React.createElement(Tile, { key: i, tiletype: 'water' }));
 	    }
-	    tiles.push(React.createElement('div', { className: 'road' }));
+	    tiles.push(React.createElement(Road, null));
 	    return tiles;
 	  },
 	  render: function () {
@@ -25302,6 +25306,26 @@
 
 	  render: function () {
 	    return React.createElement("div", { className: "tile", id: this.props.tiletype });
+	  }
+	});
+
+/***/ },
+/* 231 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var React = __webpack_require__(1);
+
+	module.exports = React.createClass({
+	  displayName: "exports",
+
+	  render: function () {
+	    if (this.props.height === "low") {
+	      return React.createElement("div", { className: "road low" });
+	    } else if (this.props.height === "high") {
+	      return React.createElement("div", { className: "road high" });
+	    } else {
+	      return React.createElement("div", { className: "road vertical" });
+	    }
 	  }
 	});
 

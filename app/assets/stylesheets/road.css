@@ -1,14 +1,28 @@
-.rotate {
-    transform: rotate(-45deg);
-    background-color: blue;
-    width: 200px;
-    height: 15px;
-}
-
 .road {
   position: relative;
   display: inline-block;
+  background-color: white;
+  z-index: -5
+}
+.low {
+  transform: rotate(-30deg);
+  width: 80px;
+  height: 3px;
+  left: 18px;
+  top: -19px;
+  margin-left: 0px;
+}
+
+.high{
+  transform: rotate(30deg);
+  width: 85px;
+  height: 3px;
+  left: 11px;
+  top: -18px;
+}
+
+
+.vertical {
   width: 3px;
-  height: 100px;
-  background-color: blue;
+  height: 94px;
 }
