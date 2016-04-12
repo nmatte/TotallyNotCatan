@@ -54,14 +54,6 @@
 
 	var App = __webpack_require__(223);
 
-	// var routes = (
-	//   <Route path="/" component={App}>
-	//     <Route path="pokemon/:pokemonId" component={PokemonDetail}>
-	//       <Route path="toys/:toyId" component={ToyDetail} />
-	//     </Route>
-	//   </Route>
-	// );
-
 	var routes = React.createElement(
 	  Route,
 	  { path: '/', component: App },
@@ -25166,15 +25158,30 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	var React = __webpack_require__(1);
+	var CatanMap = __webpack_require__(224);
 
 	module.exports = React.createClass({
 	  displayName: 'exports',
 
 	  render: function () {
+	    return React.createElement(CatanMap, null);
+	  }
+	});
+
+/***/ },
+/* 224 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var React = __webpack_require__(1);
+
+	module.exports = React.createClass({
+	  displayName: "exports",
+
+	  render: function () {
 	    return React.createElement(
-	      'div',
-	      null,
-	      'I am the start of the app'
+	      "div",
+	      { className: "map" },
+	      React.createElement("div", { id: "row1", className: "row" })
 	    );
 	  }
 	});

@@ -17,3 +17,4 @@ node_modules
 /log/*
 !/log/.keep
 /tmp
+.DS_Store

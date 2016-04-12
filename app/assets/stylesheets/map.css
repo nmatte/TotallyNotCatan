@@ -1,0 +1,17 @@
+.map {
+  background-image: url("http://www.profeasy.com/Settlers_Boardgame/assets/images/komplett_M.jpg");
+  width: 800px;
+  height: 700px;
+  background-size: cover;
+  text-align: center;
+}
+
+
+#row1 {
+  width: 400px;
+  height: 70px;
+  border: 1px solid red;
+  position: absolute;
+  margin-left: 200px;
+  margin-top: 60px;
+}

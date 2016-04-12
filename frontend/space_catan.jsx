@@ -9,13 +9,7 @@ var IndexRoute = require('react-router').IndexRoute;
 var App = require('./components/app.jsx');
 
 
-// var routes = (
-//   <Route path="/" component={App}>
-//     <Route path="pokemon/:pokemonId" component={PokemonDetail}>
-//       <Route path="toys/:toyId" component={ToyDetail} />
-//     </Route>
-//   </Route>
-// );
+
 
 var routes = (
   <Route path="/" component={App}> </Route>
