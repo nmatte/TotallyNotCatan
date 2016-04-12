@@ -85,7 +85,7 @@
   border: 2px solid green;
   position: absolute;
   top: 53px;
-  left: 159px;
+  left: 167px;
 }
 
 .tilerow2 {
@@ -137,4 +137,20 @@
 #water {
   background-image: url("http://3.bp.blogspot.com/-xxwPr1c6dfA/UhzKzAMK_FI/AAAAAAAAA44/lr0kNHWKBp8/s1600/p2shaded.png");
   background-size: cover;
+}
+
+#plat {
+  background-image: url("http://4.bp.blogspot.com/-2F4jN5gMLm0/UhzKzaDfMqI/AAAAAAAAA4k/cKy9X8rBh2Y/s1600/p3shaded.png");
+  background-size: cover;
+}
+
+#sun {
+  background-image: url("http://clipartwiz.com/wp-content/uploads/2016/02/Sun-clipart-free-clip-art-images-2.png");
+  background-size: cover;
+  left: 10px;
+  height: 180px;
+  width: 180px;
+  position: absolute;
+  left: 311px;
+  top: -40px;
 }
