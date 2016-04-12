@@ -25164,7 +25164,12 @@
 	  displayName: 'exports',
 
 	  render: function () {
-	    return React.createElement(CatanMap, null);
+	    return React.createElement(
+	      'div',
+	      null,
+	      React.createElement(CatanMap, null),
+	      React.createElement('div', { className: 'rotate' })
+	    );
 	  }
 	});
 
@@ -25270,8 +25275,10 @@
 	    // we can have a tiles per row store which keeps track of where all the tiles are (store it on the backend too)
 	    var tiles = [];
 	    for (var i = 0; i < this.props.tiles; i++) {
+	      tiles.push(React.createElement('div', { className: 'road' }));
 	      tiles.push(React.createElement(Tile, { key: i, tiletype: 'water' }));
 	    }
+	    tiles.push(React.createElement('div', { className: 'road' }));
 	    return tiles;
 	  },
 	  render: function () {

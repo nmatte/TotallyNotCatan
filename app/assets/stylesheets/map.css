@@ -82,56 +82,51 @@
 .tilerow1 {
   width: 494px;
   height: 93px;
-  border: 2px solid green;
   position: absolute;
-  top: 53px;
-  left: 167px;
+  top: 47px;
+  left: 166px;
 }
 
 .tilerow2 {
   width: 651px;
   height: 93px;
-  border: 2px solid green;
   position: absolute;
   top: 186px;
-  left: 89px;
+  left: 86px;
 }
 
 .tilerow3{
   width: 819px;
   height: 93px;
-  border: 2px solid green;
   position: absolute;
   top: 328px;
-  left: 6px;
+  left: 3px;
 }
 
 .tilerow4 {
   width: 651px;
   height: 93px;
-  border: 2px solid green;
   position: absolute;
   top: 470px;
-  left: 89px;
+  left: 84px;
 }
 
 .tilerow5 {
   width: 494px;
   height: 93px;
-  border: 2px solid green;
   position: absolute;
   top: 612px;
-  left: 169px;
+  left: 166px;
 }
 
 .tile {
-  height: 92px;
+  height: 94px;
   width: 95px;
-  border: 1px solid red;
+  /* border: 1px solid red; */
   display: inline-block;
   position: relative;
-  left: 32px;
-  margin-right: 65px;
+  left: 30px;
+  margin-right: 64px;
 }
 
 #water {

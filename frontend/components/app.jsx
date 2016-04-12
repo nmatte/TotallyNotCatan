@@ -4,7 +4,11 @@ var CatanMap = require('./map/map.jsx');
 module.exports = React.createClass({
   render: function () {
     return(
-      <CatanMap/>
+      <div>
+        <CatanMap/>
+        <div className="rotate"></div>
+      </div>
+
     );
   }
 });

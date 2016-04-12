@@ -1,0 +1,14 @@
+.rotate {
+    transform: rotate(-45deg);
+    background-color: blue;
+    width: 200px;
+    height: 15px;
+}
+
+.road {
+  position: relative;
+  display: inline-block;
+  width: 3px;
+  height: 100px;
+  background-color: blue;
+}
