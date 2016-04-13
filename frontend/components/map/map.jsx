@@ -12,11 +12,11 @@ module.exports = React.createClass({
         <VertexRow verticies={11} start="high" rownum="row4"/>
         <VertexRow verticies={9} start="high" rownum="row5"/>
         <VertexRow verticies={7} start="high" rownum="row6"/>
-        <TileRow tiles={3} rownum="tilerow1"/>
-        <TileRow tiles={4} rownum="tilerow2"/>
-        <TileRow tiles={5} rownum="tilerow3"/>
-        <TileRow tiles={4} rownum="tilerow4"/>
-        <TileRow tiles={3} rownum="tilerow5"/>
+        <TileRow tiles={[0,2]} rownum="tilerow1"/>
+        <TileRow tiles={[3,6]} rownum="tilerow2"/>
+        <TileRow tiles={[7,11]} rownum="tilerow3"/>
+        <TileRow tiles={[12,15]} rownum="tilerow4"/>
+        <TileRow tiles={[16, 18]} rownum="tilerow5"/>
       </div>
     );
   }

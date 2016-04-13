@@ -11,10 +11,10 @@ function Tile(type){ //TODO add the vertex array for connections
 }
 
 var generateNewMap = function(){
-  var types = ["plasma", "plasma", "plasma",
+  var types = ["plasma","plasma", "plasma",
                "plat", "plat", "plat", "plat",
-               "Oxy", "Oxy", "Oxy", "Oxy",
-               "water", "water", "water", "water",
+               "oxy", "oxy", "oxy", "oxy",
+               "water", "water", "water","water",
                "food", "food", "food", "food"];
   // 4 of each tile with a sun in the middle (except plasma gets 3)
   //  3 plasma (brick)
@@ -27,7 +27,11 @@ var generateNewMap = function(){
     _tiles.push(new Tile(types[random]));
     types.splice(random, 1);
   }
-  console.log(_tiles);
+  _tiles[9] = new Tile("sun");
+};
+
+TileStore.all = function(){
+  return _tiles;
 };
 
 TileStore.__onDispatch = function(payload){

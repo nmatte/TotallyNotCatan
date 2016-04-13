@@ -133,18 +133,35 @@
   background-size: cover;
 }
 
-#plat {
+#plasma {
   background-image: url("http://4.bp.blogspot.com/-2F4jN5gMLm0/UhzKzaDfMqI/AAAAAAAAA4k/cKy9X8rBh2Y/s1600/p3shaded.png");
   background-size: cover;
 }
 
-#sun {
-  background-image: url("http://clipartwiz.com/wp-content/uploads/2016/02/Sun-clipart-free-clip-art-images-2.png");
+#plat {
+  background-image: url("http://2.bp.blogspot.com/-a0vm4J7T19s/UhzK0MlEPII/AAAAAAAAA6Y/OeGb5EfbiJ0/s1600/p4shaded.png");
   background-size: cover;
-  left: 10px;
-  height: 180px;
-  width: 180px;
+}
+
+#oxy {
+  background-image: url("http://1.bp.blogspot.com/-bn9brKlIPks/UhzK1TGpoGI/AAAAAAAAA5Y/n5mTNVtF8AM/s1600/p6shaded.png");
+  background-size: cover;
+}
+
+#food {
+  background-image: url("http://3.bp.blogspot.com/-QcsoZSkGaro/UhzK2gaFYYI/AAAAAAAAA58/H_TsvbBlDF4/s1600/p8shaded.png");
+  background-size: cover;
+}
+
+#sun {
+  background-size: cover;
+}
+
+#sun img {
+  width: 175px;
+  height: 175px;
   position: absolute;
-  left: 311px;
-  top: -40px;
+  left: -37px;
+  top: -31px;
+  background-size: cover;
 }

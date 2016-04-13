@@ -25162,11 +25162,13 @@
 
 	var React = __webpack_require__(1);
 	var CatanMap = __webpack_require__(225);
+	var MapActions = __webpack_require__(232);
 
 	module.exports = React.createClass({
 	  displayName: 'exports',
 
 	  render: function () {
+	    MapActions.generateNewMap();
 	    return React.createElement(
 	      'div',
 	      null,
@@ -25198,11 +25200,11 @@
 	      React.createElement(VertexRow, { verticies: 11, start: 'high', rownum: 'row4' }),
 	      React.createElement(VertexRow, { verticies: 9, start: 'high', rownum: 'row5' }),
 	      React.createElement(VertexRow, { verticies: 7, start: 'high', rownum: 'row6' }),
-	      React.createElement(TileRow, { tiles: 3, rownum: 'tilerow1' }),
-	      React.createElement(TileRow, { tiles: 4, rownum: 'tilerow2' }),
-	      React.createElement(TileRow, { tiles: 5, rownum: 'tilerow3' }),
-	      React.createElement(TileRow, { tiles: 4, rownum: 'tilerow4' }),
-	      React.createElement(TileRow, { tiles: 3, rownum: 'tilerow5' })
+	      React.createElement(TileRow, { tiles: [0, 2], rownum: 'tilerow1' }),
+	      React.createElement(TileRow, { tiles: [3, 6], rownum: 'tilerow2' }),
+	      React.createElement(TileRow, { tiles: [7, 11], rownum: 'tilerow3' }),
+	      React.createElement(TileRow, { tiles: [12, 15], rownum: 'tilerow4' }),
+	      React.createElement(TileRow, { tiles: [16, 18], rownum: 'tilerow5' })
 	    );
 	  }
 	});
@@ -25275,15 +25277,18 @@
 	var Tile = __webpack_require__(230);
 	var Road = __webpack_require__(231);
 
+	var TileStore = __webpack_require__(237);
+
 	module.exports = React.createClass({
 	  displayName: 'exports',
 
 	  generateTiles: function () {
 	    // we can have a tiles per row store which keeps track of where all the tiles are (store it on the backend too)
 	    var tiles = [];
-	    for (var i = 0; i < this.props.tiles; i++) {
+	    var mapTiles = TileStore.all().slice(this.props.tiles[0], this.props.tiles[1] + 1);
+	    for (var i = 0; i < mapTiles.length; i++) {
 	      tiles.push(React.createElement(Road, null));
-	      tiles.push(React.createElement(Tile, { key: i, tiletype: 'water' }));
+	      tiles.push(React.createElement(Tile, { key: i, tile: mapTiles[i], tiletype: 'water' }));
 	    }
 	    tiles.push(React.createElement(Road, null));
 	    return tiles;
@@ -25308,7 +25313,14 @@
 	  displayName: "exports",
 
 	  render: function () {
-	    return React.createElement("div", { className: "tile", id: this.props.tiletype });
+	    if (this.props.tile.type === "sun") {
+	      return React.createElement(
+	        "div",
+	        { className: "tile", id: this.props.tile.type },
+	        React.createElement("img", { src: "http://clipartwiz.com/wp-content/uploads/2016/02/Sun-clipart-free-clip-art-images-2.png" })
+	      );
+	    }
+	    return React.createElement("div", { className: "tile", id: this.props.tile.type });
 	  }
 	});
 
@@ -25682,7 +25694,7 @@
 	}
 
 	var generateNewMap = function () {
-	  var types = ["plasma", "plasma", "plasma", "plat", "plat", "plat", "plat", "Oxy", "Oxy", "Oxy", "Oxy", "water", "water", "water", "water", "food", "food", "food", "food"];
+	  var types = ["plasma", "plasma", "plasma", "plat", "plat", "plat", "plat", "oxy", "oxy", "oxy", "oxy", "water", "water", "water", "water", "food", "food", "food", "food"];
 	  // 4 of each tile with a sun in the middle (except plasma gets 3)
 	  //  3 plasma (brick)
 	  //  plat (stone)
@@ -25694,7 +25706,11 @@
 	    _tiles.push(new Tile(types[random]));
 	    types.splice(random, 1);
 	  }
-	  console.log(_tiles);
+	  _tiles[9] = new Tile("sun");
+	};
+
+	TileStore.all = function () {
+	  return _tiles;
 	};
 
 	TileStore.__onDispatch = function (payload) {
