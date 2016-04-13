@@ -7,6 +7,9 @@ var Route = require('react-router').Route;
 var IndexRoute = require('react-router').IndexRoute;
 
 var App = require('./components/app.jsx');
+var MapActions = require('./actions/map.js');
+
+var TileStore = require('./stores/tile.js');
 
 
 

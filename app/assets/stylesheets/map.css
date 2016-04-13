@@ -28,7 +28,7 @@
   width: 909px;
   height: 70px;
   position: absolute;
-  left: -13px;
+  left: -14px;
   top: 281px;
 }
 
@@ -37,14 +37,14 @@
   height: 70px;
   position: absolute;
   top: 420px;
-  left: -17px;
+  left: -14px;
 }
 
 #row5 {
   width: 744px;
   height: 70px;
   position: absolute;
-  left: 66px;
+  left: 69px;
   top: 561px;
 }
 
@@ -59,13 +59,14 @@
 .vertex{
   width: 25px;
   height: 25px;
-  border: 2px solid white;
+  border: 2px dotted white;
   border-radius: 50%;
   display: inline-block;
   margin-right: 53px;
   background-color: black;
   z-index: 10;
 }
+
 
 #low {
   top: 35px;
