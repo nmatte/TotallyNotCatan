@@ -9,7 +9,7 @@ module.exports = React.createClass({
     }
     return (
       <div className="tile" id={this.props.tile.type}>
-
+        <div>{this.props.tile.diceValue}</div>
       </div>
     );
   }
