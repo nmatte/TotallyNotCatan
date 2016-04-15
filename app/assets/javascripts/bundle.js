@@ -57,18 +57,25 @@
 
 	var TileStore = __webpack_require__(230);
 
+	var CatanMap = __webpack_require__(224);
+
 	var routes = React.createElement(
-	  Route,
-	  { path: '/', component: App },
-	  ' '
+	  Router,
+	  null,
+	  React.createElement(
+	    Route,
+	    { path: '/', component: App },
+	    ' '
+	  ),
+	  React.createElement(
+	    Route,
+	    { path: '/map', component: CatanMap },
+	    ' '
+	  )
 	);
 
 	document.addEventListener("DOMContentLoaded", function () {
-	  ReactDOM.render(React.createElement(
-	    Router,
-	    null,
-	    routes
-	  ), document.getElementById('root'));
+	  ReactDOM.render(routes, document.getElementById('root'));
 	});
 
 /***/ },
@@ -32186,13 +32193,16 @@
 
 	var React = __webpack_require__(1);
 	var LinkedStateMixin = __webpack_require__(254);
+	var Link = __webpack_require__(166).Link;
+	var History = __webpack_require__(166).History;
+
 	var PlayerStore = __webpack_require__(258);
 	var PlayerActions = __webpack_require__(259);
 
 	module.exports = React.createClass({
 	  displayName: 'exports',
 
-	  mixins: [LinkedStateMixin],
+	  mixins: [LinkedStateMixin, History],
 	  getInitialState: function () {
 	    return {
 	      numberOfPlayers: 0,
@@ -32225,6 +32235,7 @@
 	      players.push({ name: this.state.player4, color: "yellow" });
 	    }
 	    PlayerActions.generateNewPlayers(players);
+	    this.history.push("/map");
 	  },
 	  render: function () {
 	    if (this.state.numberOfPlayers) {

@@ -11,16 +11,21 @@ var MapActions = require('./actions/map.js');
 
 var TileStore = require('./stores/tile.js');
 
+var CatanMap = require('./components/map/map.jsx');
+
 
 
 
 var routes = (
-  <Route path="/" component={App}> </Route>
+  <Router>
+    <Route path="/" component={App}> </Route>
+    <Route path="/map" component={CatanMap}> </Route>
+  </Router>
 );
 
 document.addEventListener("DOMContentLoaded", function () {
   ReactDOM.render(
-    <Router>{routes}</Router>,
+    routes,
     document.getElementById('root')
   );
 });

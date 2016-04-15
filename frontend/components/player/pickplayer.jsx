@@ -1,11 +1,15 @@
 var React = require('react');
 var LinkedStateMixin = require('react-addons-linked-state-mixin');
+var Link = require('react-router').Link;
+var History = require('react-router').History;
+
+
 var PlayerStore = require('../../stores/player.js');
 var PlayerActions = require('../../actions/player.js');
 
 
 module.exports = React.createClass({
-  mixins: [LinkedStateMixin],
+  mixins: [LinkedStateMixin, History],
   getInitialState: function(){
     return ({
       numberOfPlayers: 0,
@@ -40,6 +44,7 @@ module.exports = React.createClass({
       players.push({name: this.state.player4, color: "yellow"});
     }
     PlayerActions.generateNewPlayers(players);
+    this.history.push("/map");
   },
   render: function () {
     if (this.state.numberOfPlayers){
