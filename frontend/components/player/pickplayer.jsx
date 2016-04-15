@@ -43,24 +43,29 @@ module.exports = React.createClass({
   },
   render: function () {
     if (this.state.numberOfPlayers){
-      var display = [];
+      var display = [<span>Player Name:</span>];
       for (var i = 0; i < this.state.numberOfPlayers; i++){
         var playerNum = 'player'+(i + 1);
         display.push(
           <div>
-            Player Name:
             <input type="text" valueLink={this.linkState(playerNum)} />
             {this.state.colors[i]}
           </div>
         );
       }
-      display.push(<input className="start button" type="submit" value="create players"/>);
+      display.push(
+        <input className="start button"
+               id="start-button"
+               type="submit"
+               value="Start Game"
+               onClick={this.createPlayers}/>
+      );
     }
     return (
       <div>
         <div className="choose-local-players">
-          <input className="button" type="submit" value="3 players" onClick={this.threePlayers}></input>
-          <input className="button" type="submit" value="4 players" onClick={this.fourPlayers}></input>
+          <input className="button" type="submit" value="3 Players" onClick={this.threePlayers}></input>
+          <input className="button" type="submit" value="4 Players" onClick={this.fourPlayers}></input>
         </div>
         <form className="playerinfo" onSubmit={this.createPlayers}>
           {display}

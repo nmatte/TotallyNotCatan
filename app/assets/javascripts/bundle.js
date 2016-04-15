@@ -32228,18 +32228,25 @@
 	  },
 	  render: function () {
 	    if (this.state.numberOfPlayers) {
-	      var display = [];
+	      var display = [React.createElement(
+	        'span',
+	        null,
+	        'Player Name:'
+	      )];
 	      for (var i = 0; i < this.state.numberOfPlayers; i++) {
 	        var playerNum = 'player' + (i + 1);
 	        display.push(React.createElement(
 	          'div',
 	          null,
-	          'Player Name:',
 	          React.createElement('input', { type: 'text', valueLink: this.linkState(playerNum) }),
 	          this.state.colors[i]
 	        ));
 	      }
-	      display.push(React.createElement('input', { className: 'start button', type: 'submit', value: 'create players' }));
+	      display.push(React.createElement('input', { className: 'start button',
+	        id: 'start-button',
+	        type: 'submit',
+	        value: 'Start Game',
+	        onClick: this.createPlayers }));
 	    }
 	    return React.createElement(
 	      'div',
@@ -32247,8 +32254,8 @@
 	      React.createElement(
 	        'div',
 	        { className: 'choose-local-players' },
-	        React.createElement('input', { className: 'button', type: 'submit', value: '3 players', onClick: this.threePlayers }),
-	        React.createElement('input', { className: 'button', type: 'submit', value: '4 players', onClick: this.fourPlayers })
+	        React.createElement('input', { className: 'button', type: 'submit', value: '3 Players', onClick: this.threePlayers }),
+	        React.createElement('input', { className: 'button', type: 'submit', value: '4 Players', onClick: this.fourPlayers })
 	      ),
 	      React.createElement(
 	        'form',
