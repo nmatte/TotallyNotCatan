@@ -32185,7 +32185,6 @@
 	};
 
 	module.exports = MapActions;
-	window.MapActions = MapActions;
 
 /***/ },
 /* 253 */
@@ -32196,6 +32195,7 @@
 	var Link = __webpack_require__(166).Link;
 	var History = __webpack_require__(166).History;
 
+	var MapActions = __webpack_require__(252);
 	var PlayerStore = __webpack_require__(258);
 	var PlayerActions = __webpack_require__(259);
 
@@ -32234,6 +32234,7 @@
 	    if (this.state.player4) {
 	      players.push({ name: this.state.player4, color: "yellow" });
 	    }
+	    MapActions.generateNewMap();
 	    PlayerActions.generateNewPlayers(players);
 	    this.history.push("/map");
 	  },

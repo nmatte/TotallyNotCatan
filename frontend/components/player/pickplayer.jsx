@@ -3,7 +3,7 @@ var LinkedStateMixin = require('react-addons-linked-state-mixin');
 var Link = require('react-router').Link;
 var History = require('react-router').History;
 
-
+var MapActions = require('../../actions/map.js');
 var PlayerStore = require('../../stores/player.js');
 var PlayerActions = require('../../actions/player.js');
 
@@ -43,6 +43,7 @@ module.exports = React.createClass({
     if (this.state.player4){
       players.push({name: this.state.player4, color: "yellow"});
     }
+    MapActions.generateNewMap();
     PlayerActions.generateNewPlayers(players);
     this.history.push("/map");
   },

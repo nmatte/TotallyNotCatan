@@ -10,4 +10,3 @@ var MapActions = {
 
 
 module.exports = MapActions;
-window.MapActions = MapActions;
