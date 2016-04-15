@@ -32261,7 +32261,7 @@
 	    }
 	    return React.createElement(
 	      'div',
-	      null,
+	      { className: 'options' },
 	      React.createElement(
 	        'div',
 	        { className: 'choose-local-players' },

@@ -67,7 +67,7 @@ module.exports = React.createClass({
       );
     }
     return (
-      <div>
+      <div className="options">
         <div className="choose-local-players">
           <input className="button" type="submit" value="3 Players" onClick={this.threePlayers}></input>
           <input className="button" type="submit" value="4 Players" onClick={this.fourPlayers}></input>
