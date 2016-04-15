@@ -9,8 +9,6 @@ module.exports = React.createClass({
     return(
       <div>
         <PickPlayer/>
-        <CatanMap/>
-        <div className="rotate"></div>
       </div>
 
     );

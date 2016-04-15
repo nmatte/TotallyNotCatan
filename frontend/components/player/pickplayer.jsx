@@ -54,19 +54,18 @@ module.exports = React.createClass({
           </div>
         );
       }
-      return (
-        <form onSubmit={this.createPlayers}>
-          {display}
-          <input  type="submit" value="create players"/>
-        </form>
-      );
-    } else {
-      return (
-        <ul>
-          <li onClick={this.threePlayers}>3 players</li>
-          <li onClick={this.fourPlayers}>4 players</li>
-        </ul>
-      );
+      display.push(<input className="start button" type="submit" value="create players"/>);
     }
+    return (
+      <div>
+        <div className="choose-local-players">
+          <input className="button" type="submit" value="3 players" onClick={this.threePlayers}></input>
+          <input className="button" type="submit" value="4 players" onClick={this.fourPlayers}></input>
+        </div>
+        <form className="playerinfo" onSubmit={this.createPlayers}>
+          {display}
+        </form>
+      </div>
+    );
   }
 });

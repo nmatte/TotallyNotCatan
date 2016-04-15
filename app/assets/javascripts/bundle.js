@@ -25173,9 +25173,7 @@
 	    return React.createElement(
 	      'div',
 	      null,
-	      React.createElement(PickPlayer, null),
-	      React.createElement(CatanMap, null),
-	      React.createElement('div', { className: 'rotate' })
+	      React.createElement(PickPlayer, null)
 	    );
 	  }
 	});
@@ -32241,28 +32239,23 @@
 	          this.state.colors[i]
 	        ));
 	      }
-	      return React.createElement(
-	        'form',
-	        { onSubmit: this.createPlayers },
-	        display,
-	        React.createElement('input', { type: 'submit', value: 'create players' })
-	      );
-	    } else {
-	      return React.createElement(
-	        'ul',
-	        null,
-	        React.createElement(
-	          'li',
-	          { onClick: this.threePlayers },
-	          '3 players'
-	        ),
-	        React.createElement(
-	          'li',
-	          { onClick: this.fourPlayers },
-	          '4 players'
-	        )
-	      );
+	      display.push(React.createElement('input', { className: 'start button', type: 'submit', value: 'create players' }));
 	    }
+	    return React.createElement(
+	      'div',
+	      null,
+	      React.createElement(
+	        'div',
+	        { className: 'choose-local-players' },
+	        React.createElement('input', { className: 'button', type: 'submit', value: '3 players', onClick: this.threePlayers }),
+	        React.createElement('input', { className: 'button', type: 'submit', value: '4 players', onClick: this.fourPlayers })
+	      ),
+	      React.createElement(
+	        'form',
+	        { className: 'playerinfo', onSubmit: this.createPlayers },
+	        display
+	      )
+	    );
 	  }
 	});
 

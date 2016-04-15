@@ -1,0 +1,49 @@
+.choose-local-players {
+  width: 300px;
+  height: 300px;
+  display: inline-block;
+  position: relative;
+  float: left;
+  border-right: 2px solid white;
+}
+
+.choose-local-players input {
+  text-decoration: none;
+  display: block;
+  width: 80%;
+  margin-left: 15%
+
+}
+
+
+.playerinfo {
+  display: inline-block;
+  float: right;
+  width: 60%;
+}
+
+.playerinfo input {
+  margin-bottom: 5px;
+  margin-right: 50px;
+  width: 60%;
+
+}
+
+.start {
+  margin-left: 91px;
+}
+
+.button {
+  font-family: 'Jura', sans-serif;
+  font-size: 32px;
+  margin-bottom: 5px;
+  margin-right: 10px;
+  display: inline-block;
+  color: #fff;
+  /*text-transform: uppercase;*/
+  padding: 8px 15px;
+  border-radius: 3px;
+  box-shadow: 0 0 4px 2px #202325;
+  background: #0081b4;
+
+}
