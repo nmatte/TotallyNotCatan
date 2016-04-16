@@ -5,7 +5,6 @@ var PickPlayer = require('./player/pickplayer.jsx');
 
 module.exports = React.createClass({
   render: function () {
-    MapActions.generateNewMap();
     return(
       <div>
         <PickPlayer/>

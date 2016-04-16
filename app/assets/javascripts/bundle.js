@@ -25176,7 +25176,6 @@
 	  displayName: 'exports',
 
 	  render: function () {
-	    MapActions.generateNewMap();
 	    return React.createElement(
 	      'div',
 	      null,
@@ -25193,24 +25192,31 @@
 	var VertexRow = __webpack_require__(225);
 	var TileRow = __webpack_require__(228);
 
+	var CurrentPlayer = __webpack_require__(260);
+
 	module.exports = React.createClass({
 	  displayName: 'exports',
 
 	  render: function () {
 	    return React.createElement(
 	      'div',
-	      { className: 'map' },
-	      React.createElement(VertexRow, { verticies: 7, start: 'low', rownum: 'row1' }),
-	      React.createElement(VertexRow, { verticies: 9, start: 'low', rownum: 'row2' }),
-	      React.createElement(VertexRow, { verticies: 11, start: 'low', rownum: 'row3' }),
-	      React.createElement(VertexRow, { verticies: 11, start: 'high', rownum: 'row4' }),
-	      React.createElement(VertexRow, { verticies: 9, start: 'high', rownum: 'row5' }),
-	      React.createElement(VertexRow, { verticies: 7, start: 'high', rownum: 'row6' }),
-	      React.createElement(TileRow, { tiles: [0, 2], rownum: 'tilerow1' }),
-	      React.createElement(TileRow, { tiles: [3, 6], rownum: 'tilerow2' }),
-	      React.createElement(TileRow, { tiles: [7, 11], rownum: 'tilerow3' }),
-	      React.createElement(TileRow, { tiles: [12, 15], rownum: 'tilerow4' }),
-	      React.createElement(TileRow, { tiles: [16, 18], rownum: 'tilerow5' })
+	      null,
+	      React.createElement(CurrentPlayer, null),
+	      React.createElement(
+	        'div',
+	        { className: 'map' },
+	        React.createElement(VertexRow, { verticies: 7, start: 'low', rownum: 'row1' }),
+	        React.createElement(VertexRow, { verticies: 9, start: 'low', rownum: 'row2' }),
+	        React.createElement(VertexRow, { verticies: 11, start: 'low', rownum: 'row3' }),
+	        React.createElement(VertexRow, { verticies: 11, start: 'high', rownum: 'row4' }),
+	        React.createElement(VertexRow, { verticies: 9, start: 'high', rownum: 'row5' }),
+	        React.createElement(VertexRow, { verticies: 7, start: 'high', rownum: 'row6' }),
+	        React.createElement(TileRow, { tiles: [0, 2], rownum: 'tilerow1' }),
+	        React.createElement(TileRow, { tiles: [3, 6], rownum: 'tilerow2' }),
+	        React.createElement(TileRow, { tiles: [7, 11], rownum: 'tilerow3' }),
+	        React.createElement(TileRow, { tiles: [12, 15], rownum: 'tilerow4' }),
+	        React.createElement(TileRow, { tiles: [16, 18], rownum: 'tilerow5' })
+	      )
 	    );
 	  }
 	});
@@ -32266,8 +32272,14 @@
 	      React.createElement(
 	        'div',
 	        { className: 'choose-local-players' },
-	        React.createElement('input', { className: 'button', type: 'submit', value: '3 Players', onClick: this.threePlayers }),
-	        React.createElement('input', { className: 'button', type: 'submit', value: '4 Players', onClick: this.fourPlayers })
+	        React.createElement('input', { className: 'button',
+	          type: 'submit',
+	          value: '3 Players',
+	          onClick: this.threePlayers }),
+	        React.createElement('input', { className: 'button',
+	          type: 'submit',
+	          value: '4 Players',
+	          onClick: this.fourPlayers })
 	      ),
 	      React.createElement(
 	        'form',
@@ -32533,6 +32545,14 @@
 	  players_.push(new Player(name, color));
 	};
 
+	PlayerStore.all = function () {
+	  return players_;
+	};
+
+	PlayerStore.currentPlayer = function () {
+	  return players_[0];
+	};
+
 	PlayerStore.__onDispatch = function (payload) {
 	  switch (payload.actionType) {
 	    case "NEW_PLAYERS":
@@ -32542,6 +32562,8 @@
 	      break;
 	  }
 	};
+
+	module.exports = PlayerStore;
 
 /***/ },
 /* 259 */
@@ -32559,6 +32581,34 @@
 	};
 
 	module.exports = PlayerActions;
+
+/***/ },
+/* 260 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var React = __webpack_require__(1);
+
+	var PlayerStore = __webpack_require__(258);
+
+	module.exports = React.createClass({
+	  displayName: 'exports',
+
+	  getInitialState: function () {
+	    return { currentPlayer: PlayerStore.currentPlayer() };
+	  },
+
+	  render: function () {
+	    return React.createElement(
+	      'div',
+	      null,
+	      React.createElement(
+	        'h1',
+	        null,
+	        this.state.currentPlayer.name
+	      )
+	    );
+	  }
+	});
 
 /***/ }
 /******/ ]);

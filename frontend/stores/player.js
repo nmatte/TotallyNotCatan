@@ -21,6 +21,14 @@ var generatePlayer = function(name, color){
   players_.push(new Player(name,color));
 };
 
+PlayerStore.all = function(){
+  return players_;
+};
+
+PlayerStore.currentPlayer = function(){
+  return players_[0];
+};
+
 
 PlayerStore.__onDispatch = function(payload){
   switch(payload.actionType){
@@ -31,3 +39,5 @@ PlayerStore.__onDispatch = function(payload){
       break;
   }
 };
+
+module.exports = PlayerStore;
