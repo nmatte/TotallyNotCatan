@@ -1,11 +1,11 @@
-require_relative 'face_graph.rb'
 require_relative 'road.rb'
 require_relative 'spot.rb'
 require_relative 'tile.rb'
 
+
 # How do I show the resource of a face?
 
-class Board < FaceGraph
+class Board < Zadt::FaceGraph
   attr_reader :board
   # Current board limitations (Other than the "capability_check")
     # It'll only make a board with consistently shaped tiles

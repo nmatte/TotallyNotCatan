@@ -1,5 +1,4 @@
-require_relative 'vertex.rb'
-class Spot < Vertex
+class Spot < Zadt::Vertex
   def initialize
     @occupied = false
     @color = "none"

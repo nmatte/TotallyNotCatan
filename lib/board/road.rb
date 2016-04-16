@@ -1,5 +1,6 @@
-require_relative 'edge.rb'
-class Road < Edge
+require 'zadt'
+
+class Road < Zadt::Edge
   attr_reader :road_color
   def initialize(spot1, spot2)
     @road_color = "blank"
