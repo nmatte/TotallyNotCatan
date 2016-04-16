@@ -1,0 +1,70 @@
+.choose-local-players {
+  width: 300px;
+  height: 300px;
+  display: inline-block;
+  position: relative;
+  float: left;
+  border-right: 2px solid white;
+}
+
+.choose-local-players input {
+  text-decoration: none;
+  display: block;
+  width: 80%;
+  margin-left: 15%;
+  margin-top: 30px;
+}
+
+
+.playerinfo {
+  font-family: 'Jura', sans-serif;
+  font-size: 24px;
+  display: inline-block;
+  float: right;
+  width: 60%;
+  margin-top: 25px;
+}
+
+.playerinfo input {
+  margin-bottom: 5px;
+  margin-right: 50px;
+  width: 60%;
+  font-family: 'Jura', sans-serif;
+  font-size: 24px;
+}
+
+.start {
+  margin-left: 91px;
+  position: absolute;
+  top: 190px;
+  margin: 0 auto;
+}
+
+#start-button {
+  width: 310px;
+}
+.options {
+  width: 1000px;
+  margin: 0 auto;
+}
+
+.button {
+  font-family: 'Jura', sans-serif;
+  font-size: 24px;
+  height: 52px;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  display: inline-block;
+  color: #fff;
+  /*text-transform: uppercase;*/
+  padding: 8px 15px;
+  border-radius: 3px;
+  box-shadow: 0 0 4px 2px #202325;
+  background: #0081b4;
+  border:none;
+
+}
+
+.options {
+  background-color: black;
+}

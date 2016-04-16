@@ -2,17 +2,17 @@ Resource Distribution:
   Dice-roll, tell vertices to receive a resource
 
 Roads
-  Has neighbors
-  Nearest city
+  Has neighbors (done)
+  Nearest city  (done)
   Longest Path
   Can I build here?
 
 Town/Cities
-  2 roads away?
+  2 roads away?  (done)
   Listen to resources
 
 Robber
-  Disable resources
+  Disable resources  (done)
 
 Ports
   Special tile?

@@ -1,0 +1,177 @@
+.map {
+  background-image: url(/assets/mapbg2.png);
+  width: 820px;
+  height: 755px;
+  background-size: cover;
+  position: relative;
+  margin: 0 auto;
+  z-index: -100
+}
+
+
+#row1 {
+  width: 593px;
+  height: 70px;
+  position: absolute;
+  left: 150px;
+  margin-top: -2px;
+}
+#row2 {
+  width: 744px;
+  height: 70px;
+  position: absolute;
+  left: 68px;
+  top: 140px;
+}
+
+#row3{
+  width: 909px;
+  height: 70px;
+  position: absolute;
+  left: -14px;
+  top: 281px;
+}
+
+#row4{
+  width: 909px;
+  height: 70px;
+  position: absolute;
+  top: 420px;
+  left: -14px;
+}
+
+#row5 {
+  width: 744px;
+  height: 70px;
+  position: absolute;
+  left: 69px;
+  top: 561px;
+}
+
+#row6 {
+  width: 593px;
+  height: 70px;
+  position: absolute;
+  left: 149px;
+  top: 702px;
+}
+
+.vertex{
+  width: 25px;
+  height: 25px;
+  border: 2px dotted white;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 53px;
+  background-color: black;
+  z-index: 10;
+}
+
+
+#low {
+  top: 35px;
+  position: relative;
+}
+#high {
+  top: -2px;
+}
+
+
+/* Tiles CSS*/
+
+.tilerow1 {
+  width: 494px;
+  height: 93px;
+  position: absolute;
+  top: 47px;
+  left: 164px;
+}
+
+.tilerow2 {
+  width: 656px;
+  height: 93px;
+  position: absolute;
+  top: 189px;
+  left: 83px;
+}
+
+.tilerow3{
+  width: 819px;
+  height: 93px;
+  position: absolute;
+  top: 328px;
+  left: 1px;
+}
+
+.tilerow4 {
+  width: 657px;
+  height: 93px;
+  position: absolute;
+  top: 470px;
+  left: 83px;
+}
+
+.tilerow5 {
+  width: 494px;
+  height: 93px;
+  position: absolute;
+  top: 612px;
+  left: 164px;
+}
+
+.tile {
+  height: 100px;
+  width: 95px;
+  display: inline-block;
+  position: relative;
+  left: 30px;
+  margin-right: 65px;
+  top: -77px;
+  font-size: 18px;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.tile div {
+  width: 0px;
+  height: 0px;
+  position: relative;
+  color: white;
+}
+
+#water {
+  background-image: url("http://3.bp.blogspot.com/-xxwPr1c6dfA/UhzKzAMK_FI/AAAAAAAAA44/lr0kNHWKBp8/s1600/p2shaded.png");
+  background-size: cover;
+}
+
+#plasma {
+  background-image: url("http://4.bp.blogspot.com/-2F4jN5gMLm0/UhzKzaDfMqI/AAAAAAAAA4k/cKy9X8rBh2Y/s1600/p3shaded.png");
+  background-size: cover;
+}
+
+#plat {
+  background-image: url("http://2.bp.blogspot.com/-a0vm4J7T19s/UhzK0MlEPII/AAAAAAAAA6Y/OeGb5EfbiJ0/s1600/p4shaded.png");
+  background-size: cover;
+}
+
+#oxy {
+  background-image: url("http://1.bp.blogspot.com/-bn9brKlIPks/UhzK1TGpoGI/AAAAAAAAA5Y/n5mTNVtF8AM/s1600/p6shaded.png");
+  background-size: cover;
+}
+
+#food {
+  background-image: url("http://3.bp.blogspot.com/-QcsoZSkGaro/UhzK2gaFYYI/AAAAAAAAA58/H_TsvbBlDF4/s1600/p8shaded.png");
+  background-size: cover;
+}
+
+#sun {
+  background-size: cover;
+}
+
+#sun img {
+  width: 175px;
+  height: 175px;
+  position: absolute;
+  left: -37px;
+  top: 49px;
+  background-size: cover;
+}
