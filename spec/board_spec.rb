@@ -19,6 +19,11 @@ describe Board do
         expect(@the_board.find_face_neighbors(@the_board.faces[18]).length).to eq(3)
         expect(@the_board.find_face_neighbors(@the_board.faces[18])).to match_array([ @the_board.faces[6], @the_board.faces[7], @the_board.faces[17] ])
       end
+      it "has a 6th face that has the 6 correct neighbors" do
+        expect(@the_board.find_face_neighbors(@the_board.faces[6]).length).to eq(6)
+        expect(@the_board.find_face_neighbors(@the_board.faces[6])).to match_array([ @the_board.faces[1], @the_board.faces[0], @the_board.faces[5], @the_board.faces[17], @the_board.faces[18], @the_board.faces[7] ])
+      end
+
     end
   end
 
